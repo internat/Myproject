@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Price Direction Probability System</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Price Direction Probability System (PDPS)</h1>
+            <p class="subtitle">Intelligent market analysis and prediction</p>
+        </header>
+
+        <main class="main-content">
+            <div class="control-panel">
+                <div class="status-indicator">
+                    <div class="status-dot" id="statusDot"></div>
+                    <span id="statusText">Waiting to start</span>
+                </div>
+                
+                <button class="btn btn-primary" id="startBtn">
+                    <span class="btn-text">🚀 Start Analysis</span>
+                    <span class="btn-loading" style="display: none;">⏳ Analyzing...</span>
+                </button>
+                
+                <button class="btn btn-secondary" id="stopBtn" disabled>
+                    <span class="btn-text">⏹️ Stop</span>
+                </button>
+            </div>
+
+            <div class="prediction-card" id="predictionCard" style="display: none;">
+                <h3>📊 Analysis Result</h3>
+                <div class="prediction-content">
+                    <div class="prediction-direction" id="predictionDirection">
+                        <span class="direction-text">UP</span>
+                        <span class="confidence">95%</span>
+                    </div>
+                    <div class="prediction-details">
+                        <div class="detail-item">
+                            <span class="label">Direction:</span>
+                            <span class="value" id="directionValue">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Confidence:</span>
+                            <span class="value" id="confidenceValue">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Analysis Time:</span>
+                            <span class="value" id="analysisTime">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Data Source:</span>
+                            <span class="value" id="dataSource">-</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="label">Timeframes:</span>
+                            <span class="value">5m, 15m, 30m, 1h</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="background-monitor" id="backgroundMonitor" style="display: none;">
+                <h3>🔄 Background Monitoring</h3>
+                <div class="monitor-status">
+                    <div class="monitor-indicator">
+                        <div class="pulse-dot"></div>
+                        <span>Monitoring Active</span>
+                    </div>
+                    <div class="last-check">
+                        Last Check: <span id="lastCheckTime">-</span>
+                    </div>
+                </div>
+                <div class="notification-settings">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="notificationsEnabled" checked>
+                        <span class="checkmark"></span>
+                        Enable Notifications
+                    </label>
+                </div>
+            </div>
+
+            <div class="log-container" id="logContainer">
+                <h3>📝 Event Log</h3>
+                <div class="log-content" id="logContent">
+                    <div class="log-entry">
+                        <span class="log-time">12:00:00</span>
+                        <span class="log-message">System ready to work</span>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
